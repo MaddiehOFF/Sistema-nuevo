@@ -3,7 +3,7 @@ import { GoogleGenAI } from "@google/genai";
 import { Employee, InventoryItem, InventorySession, OvertimeRecord, SanctionRecord, WalletTransaction, FixedExpense, BudgetAnalysis } from "../types";
 
 // Note: Process.env.API_KEY is expected to be present.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
 
 export const generateOvertimeAnalysis = async (
   employees: Employee[], 
